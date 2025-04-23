@@ -1,0 +1,42 @@
+# Python virtual environments
+myenv/
+venv/
+ENV/
+env/
+.venv/
+
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Local development settings
+.env
+.venv
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo 
+
+# Database files and backups
+*.sqlite
+*.db
+*.sql.bak
+*.bak
+
+# Logs
+logs/
+*.log
+
+# macOS
+.DS_Store
+
+# Node.js (in case there are any Node.js dependencies at the root level)
+node_modules/ 

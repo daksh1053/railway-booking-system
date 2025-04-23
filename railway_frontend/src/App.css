@@ -1,0 +1,388 @@
+:root {
+  /* Light theme variables */
+  --bg-primary: #f9f9f9;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f0f2f5;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --accent-primary: #3a86ff;
+  --accent-secondary: #4361ee;
+  --accent-tertiary: #3f37c9;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --error-color: #f44336;
+  --info-color: #2196f3;
+  --card-bg: #ffffff;
+  --hover-bg: rgba(0, 0, 0, 0.05);
+  --nav-bg: #ffffff;
+  --nav-text: #333333;
+  --nav-active: #3a86ff;
+  --nav-hover: #f0f2f5;
+  --input-bg: #ffffff;
+  --input-border: #e0e0e0;
+  --input-text: #333333;
+  --button-primary-bg: #3a86ff;
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: #f0f2f5;
+  --button-secondary-text: #333333;
+  --transition-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+  /* Dark theme variables */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2d2d2d;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b3b3b3;
+  --text-tertiary: #808080;
+  --accent-primary: #4361ee;
+  --accent-secondary: #3a86ff;
+  --accent-tertiary: #4895ef;
+  --border-color: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --success-color: #66bb6a;
+  --warning-color: #ffa726;
+  --error-color: #ef5350;
+  --info-color: #42a5f5;
+  --card-bg: #1e1e1e;
+  --hover-bg: rgba(255, 255, 255, 0.05);
+  --nav-bg: #1e1e1e;
+  --nav-text: #f5f5f5;
+  --nav-active: #4361ee;
+  --nav-hover: #2d2d2d;
+  --input-bg: #2d2d2d;
+  --input-border: #333333;
+  --input-text: #f5f5f5;
+  --button-primary-bg: #4361ee;
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: #2d2d2d;
+  --button-secondary-text: #f5f5f5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, border-color
+    var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: var(--bg-primary);
+  display: flex;
+}
+
+.app-layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  margin-left: 250px;
+  transition: margin-left var(--transition-speed) ease;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Card styles */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+/* Button styles */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s, transform 0.2s;
+}
+
+button:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto var(--accent-primary);
+}
+
+.primary-button {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+}
+
+.primary-button:hover {
+  background-color: var(--accent-secondary);
+}
+
+/* Form styles */
+input,
+select,
+textarea {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--input-text);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.3);
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px 0;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+  background-color: var(--bg-tertiary);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table tr:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Hover effect with blur */
+.hover-blur-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hover-blur-item {
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.hover-blur-container:hover .hover-blur-item:not(:hover) {
+  filter: blur(2px) grayscale(30%);
+  transform: scale(0.98);
+}
+
+/* Dashboard cards */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dashboard-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.card-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: var(--bg-tertiary);
+  border-radius: 50%;
+}
+
+.dashboard-card h3 {
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.dashboard-card p {
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* Welcome container */
+.welcome-container {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  max-width: 500px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--border-color);
+}
+
+.welcome-container h1 {
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.welcome-container button {
+  padding: 10px 20px;
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.welcome-container button:hover {
+  background-color: var(--accent-secondary);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Status indicators */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-badge.confirmed {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.status-badge.pending {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.status-badge.cancelled {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.status-badge.waitlisted {
+  background-color: var(--info-color);
+  color: white;
+}

@@ -1,0 +1,27 @@
+train_number,train_name,category,total_coaches,fare_multiplier
+12301,Howrah Rajdhani,SuperFast,20,1.50
+12302,Delhi Rajdhani,SuperFast,22,1.55
+12951,Mumbai Rajdhani,SuperFast,21,1.50
+12952,New Delhi Rajdhani,SuperFast,20,1.50
+13005,Howrah-Amritsar Mail,Express,18,1.20
+14055,Brahmaputra Mail,Express,16,1.15
+12311,Kalka Mail,Express,19,1.25
+12312,Howrah-Kalka Mail,Express,19,1.25
+53031,Bodhan Passenger,Passenger,12,1.00
+54801,Lucknow-Chandigarh Passenger,Passenger,10,1.00
+12621,Tamil Nadu Express,SuperFast,22,1.45
+12622,New Delhi-Chennai Express,SuperFast,22,1.45
+12723,Telangana Express,SuperFast,20,1.40
+12724,AP Express,SuperFast,20,1.40
+19019,Dehradun Express,Express,15,1.30
+19020,Mumbai-Dehradun Express,Express,15,1.30
+12625,Kerala Express,SuperFast,23,1.35
+12626,New Delhi-Trivandrum Express,SuperFast,23,1.35
+54321,Varanasi-Patna Passenger,Passenger,11,1.00
+54322,Patna-Varanasi Passenger,Passenger,11,1.00
+54123,Jaipur-Agra Passenger,Passenger,10,1.00
+54124,Agra-Jaipur Passenger,Passenger,10,1.00
+54567,Bhopal-Indore Passenger,Passenger,9,1.00
+54568,Indore-Bhopal Passenger,Passenger,9,1.00
+54789,Ahmedabad-Vadodara Passenger,Passenger,10,1.00
+54790,Vadodara-Ahmedabad Passenger,Passenger,10,1.00 

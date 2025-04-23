@@ -1,0 +1,135 @@
+.navigation {
+  width: 250px;
+  height: 100vh;
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px var(--shadow-color);
+  z-index: 100;
+  transition: width 0.3s ease, transform 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.nav-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.nav-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  overflow-y: auto;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: var(--nav-text);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 0;
+  margin: 2px 0;
+}
+
+.nav-item:hover {
+  background-color: var(--nav-hover);
+  color: var(--nav-active);
+  border-left: 3px solid var(--accent-primary);
+}
+
+.nav-item.active {
+  background-color: var(--nav-hover);
+  color: var(--nav-active);
+  border-left: 3px solid var(--accent-primary);
+  font-weight: 500;
+}
+
+.nav-footer {
+  padding: 15px 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: var(--error-color);
+  color: white;
+}
+
+/* Responsive navigation */
+@media (max-width: 768px) {
+  .navigation {
+    width: 60px;
+  }
+
+  .navigation:hover {
+    width: 250px;
+  }
+
+  .nav-brand span,
+  .nav-item span,
+  .logout-button span {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .navigation:hover .nav-brand span,
+  .navigation:hover .nav-item span,
+  .navigation:hover .logout-button span {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    transform: translateX(-100%);
+    width: 250px;
+  }
+
+  .navigation.open {
+    transform: translateX(0);
+  }
+
+  .nav-brand span,
+  .nav-item span,
+  .logout-button span {
+    opacity: 1;
+    visibility: visible;
+  }
+}

@@ -1,0 +1,164 @@
+.auth-container {
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px var(--shadow-color);
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeIn 0.5s ease;
+}
+
+.auth-box {
+  flex: 1;
+  padding: 40px;
+  transition: all 0.3s ease;
+}
+
+.login-box {
+  background-color: var(--card-bg);
+}
+
+.register-box {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.register-box h2 {
+  color: white;
+}
+
+.register-box label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.submit-btn {
+  padding: 14px;
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+
+.submit-btn:hover {
+  background-color: var(--accent-secondary);
+  transform: translateY(-3px);
+}
+
+.register-btn {
+  background-color: white;
+  color: var(--accent-primary);
+}
+
+.register-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.error-message {
+  color: var(--error-color);
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: rgba(244, 67, 54, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  border-left: 4px solid var(--error-color);
+}
+
+.register-box .error-message {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-left: 4px solid white;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+    max-width: 450px;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin: 40px auto;
+    height: auto;
+  }
+
+  .auth-box {
+    padding: 30px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

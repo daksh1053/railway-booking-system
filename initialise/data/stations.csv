@@ -1,0 +1,26 @@
+station_id,station_abbreviation,station_city,station_state
+1,NDLS,New Delhi,Delhi
+2,BCT,Mumbai,Maharashtra
+3,MAS,Chennai,Tamil Nadu
+4,HWH,Kolkata,West Bengal
+5,SBC,Bengaluru,Karnataka
+6,ADI,Ahmedabad,Gujarat
+7,PUNE,Pune,Maharashtra
+8,JP,Jaipur,Rajasthan
+9,LKO,Lucknow,Uttar Pradesh
+10,CNB,Kanpur,Uttar Pradesh
+11,SC,Hyderabad,Telangana
+12,BZA,Vijayawada,Andhra Pradesh
+13,BPL,Bhopal,Madhya Pradesh
+14,PNBE,Patna,Bihar
+15,GHY,Guwahati,Assam
+16,ASR,Amritsar,Punjab
+17,ERS,Kochi,Kerala
+18,BSB,Varanasi,Uttar Pradesh
+19,NGP,Nagpur,Maharashtra
+20,CDG,Chandigarh,Chandigarh
+21,TVC,Thiruvananthapuram,Kerala
+22,JAT,Jammu,Jammu & Kashmir
+23,GWL,Gwalior,Madhya Pradesh
+24,AGC,Agra,Uttar Pradesh
+25,ST,Surat,Gujarat
