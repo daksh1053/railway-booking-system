@@ -13,21 +13,40 @@ The Railway Database System is a comprehensive database solution designed for ma
 
 ## How to Run
 
-intialise my sql server
-1. mysql --local-infile=1 -u root -p
-2. SET GLOBAL local_infile = 1;
-3. source ./initialise/create_db.sql
+### Initialize MySQL Server
+```bash
+# Start MySQL with local file privileges
+mysql --local-infile=1 -u root -p
 
-start python flask reverse proxy to run the sql queries.
-1. set up a python virtual environment
-2. pip install mysql-connector-python flask flask-cors
-3. run the sql_queries.py file
+# Inside MySQL console
+SET GLOBAL local_infile = 1;
+source ./initialise/create_db.sql
+```
 
-frontend
-1. cd to the frontend folder
-2. npm install
-3. npm run dev
+### Start Python Flask Server
+```bash
+# Set up a Python virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
+# Install dependencies
+pip install mysql-connector-python flask flask-cors
+
+# Run the server
+python sql_query_server.py
+```
+
+### Start Frontend
+```bash
+# Navigate to frontend directory
+cd railway_frontend
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
 
 ## Implementation Approach
 
